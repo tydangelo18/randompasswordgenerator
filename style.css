@@ -64,3 +64,75 @@ h6 {
     margin-left: 20px;
     text-shadow: .3px .3px .3px rgba(0, 0, 0, 0.931);   
 }
+
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        size: 100%;
+    }
+    
+    h2 {
+        margin-top: 20px;
+        margin-left: 17px;
+        font-weight: 630;
+        color: #fff;
+        text-shadow: .3px .3px .3px rgba(0, 0, 0, 0.931);
+    }
+    
+    h3 {
+        margin-top: 15px;
+        margin-left: 63px;
+        color: black;
+    }
+    
+    h6 {
+        margin-top: 15px;
+        margin-left: 33px;
+        color: grey;
+        font-weight: normal;
+    }
+    
+    
+    .container {
+        width: 1150px;
+        height: 500px;
+        margin-top: 150px;
+        background-color: teal;
+        opacity: 0.8;
+        border-radius: 1.3em 1.3em 1.3em 1.3em;
+    }
+    
+    .container2 {
+        width: 1000px;
+        height: 330px;
+        margin-left: 50px;
+        margin-top: 20px;
+        background-color: rgba(228, 228, 228, 0.965);
+        border-radius: .67em .67em .67em .67em;
+        box-shadow: .1px .1px .1px .1px black;
+        
+    }
+    
+    .container3 {
+        border: 1px dashed gray;
+        width: 800px;
+        margin-left: 100px;
+        height: 160px;
+        border-radius: 1em 1em 1em 1em;
+    }
+    
+    .btn {
+        background-color: teal;
+        padding: 0.5em 1.5em;
+        font-size: 1.5em;
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 1.5em 1.5em 1.5em 1.5em;
+        margin-top: 14px;
+        margin-left: 20px;
+        text-shadow: .3px .3px .3px rgba(0, 0, 0, 0.931);   
+    }
+    
+}
