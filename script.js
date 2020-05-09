@@ -1,6 +1,5 @@
 let generateBtn = document.querySelector("#generate") //selects button element to generate a password when clicked.
 
-let generateBox = document.querySelector("#password")
 
  //add an event listener to button element.
 
@@ -31,14 +30,30 @@ function createPassword() {
 
     let characterLower = window.confirm("Do you want lowercase characters? (OK = Yes, Cancel = No)");
 
+    if (characterLower === true) {
+        alert("Okay, lowercase added!");
+    }
+
 
     let characterUpper = window.confirm("Do you want uppercase characters? (OK = Yes, Cancel = No)");
+
+    if (characterUpper === true) {
+        alert("Okay, uppercase added!");
+    }
 
     
     let characterSpecial = window.confirm("Do you want special characters? (OK = Yes, Cancel = No)");
 
+    if (characterSpecial === true) {
+        alert("Okay, special characters added!");
+    }
+
     
     let characterNumber = window.confirm("Do you want numbers? (OK = Yes, Cancel = No)");
+
+    if (characterNumber === true) {
+        alert("Okay, numbers added!");
+    }
     
 
     
@@ -68,6 +83,13 @@ function createPassword() {
         final(finalPassword, passwordLength); //must make sure user selected at least one criteria
     }
 
+    else {
+        alert("Please select enough criteria to generate a password.")
+        return createPassword();
+    }
+
+    
+
 }
 
 
@@ -80,7 +102,7 @@ function final(finalPassword, passwordLength) {
 
     random(finalPassword);
     document.getElementById("password").innerHTML = 
-        "Here you go:   " + finalPassword.slice(0, passwordLength).join("");
+        finalPassword.slice(0, passwordLength).join("");
 }
 
 

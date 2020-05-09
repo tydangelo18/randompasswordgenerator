@@ -90,16 +90,15 @@ h6 {
     
     h6 {
         margin-top: 15px;
-        margin-left: 33px;
-        color: grey;
-        font-weight: normal;
+        color: black;
+        font-weight: bold;
     }
     
     
     .container {
         width: 1150px;
         height: 500px;
-        margin-top: 150px;
+        margin-top: 40px;
         background-color: teal;
         opacity: 0.8;
         border-radius: 1.3em 1.3em 1.3em 1.3em;
