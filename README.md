@@ -3,7 +3,6 @@
 ### Contributors
 Tyler D'Angelo
 - [Github](https://github.com/tydangelo18). 
-- [LinkedIn](www.linkedin.com/in/tydangelo18).
 
 ### Client Instructions
 
@@ -30,7 +29,7 @@ Tyler D'Angelo
 3. Bootstrap (*Grid System*)
 4. Javascript
 5. [Github](https://github.com/tydangelo18).
-6. [Github Pages](https://pages.github.com).  
+6. [Github Pages](https://tydangelo18.github.io/randompasswordgenerator/.).  
 
 ### Application Features
 
