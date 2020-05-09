@@ -1,7 +1,6 @@
 let generateBtn = document.querySelector("#generate") //selects button element to generate a password when clicked.
 
-
- //add an event listener to button element.
+generateBtn.addEventListener("click", createPassword); // add an Event Listener to the button element. 
 
 let specialCharacters = '~`!@#$%^&*()-_=+""{[}]\|:;<,>./?'; //global variable
 
@@ -23,7 +22,6 @@ function createPassword() {
     if (passwordLength < 8 || passwordLength > 128) {
         alert("Please choose between 8 and 128 characters.")
         return createPassword();
-        
     }  
 
     // Add in if statements for user to see which cirteria they've selected. 
@@ -88,8 +86,6 @@ function createPassword() {
         return createPassword();
     }
 
-    
-
 }
 
 
@@ -97,7 +93,9 @@ function createPassword() {
 
 function final(finalPassword, passwordLength) {
     function random(array) {
-        array.sort(() => Math.random() -0.5);
+        array.sort(() => {
+            return Math.random() - 0.5;
+        });
     }
 
     random(finalPassword);
@@ -107,7 +105,7 @@ function final(finalPassword, passwordLength) {
 
 
 
-generateBtn.addEventListener("click", createPassword); // add an Event Listener to the button element. 
+
 
 
 
