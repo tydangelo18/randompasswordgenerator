@@ -10,20 +10,16 @@ let digits = "0123456789"; //global variable
 
 let availableCharacters = []; // The box that holds all of the characters based on the criteria that the user selects (Lower, Upper, Special, Number)
 
-let guaranteedCharacters = []; // Will turn into Final Password.
+
 
 // Receive Password Criteria from the user.
 
 function createPassword() {
-  let passwordLength = 0;
-  // User must select between 8 and 128 and must be a nukber
-  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    passwordLength = prompt(
+  let passwordLength = prompt(
       "Between 8 and 128 characters, how many characters would you like your password to be?"
     );
-  }
 
-  // Add in if statements for user to see which cirteria they've selected.
+  // Add in if statements for user to see which criteria they've selected.
 
   let characterLower = window.confirm(
     "Do you want lowercase characters? (OK = Yes, Cancel = No)"
@@ -41,6 +37,9 @@ function createPassword() {
     "Do you want numbers? (OK = Yes, Cancel = No)"
   );
 
+//1 User input is a number between 8 and 128 from the prompt 
+//2. number selected becomes the number of characters in the final password array
+
   //Add selected user password criteria into finalPassword Array.
 
   // if (passwordLength >= 8) {
@@ -50,41 +49,49 @@ function createPassword() {
   // Check the confirm windows
 
   if (characterLower === true) {
-    guaranteedCharacters.push(random(lowerLetters));
-    availableCharacters.push(lowerLetters);
+    userConfig.lowerCase = true;
   }
 
   if (characterUpper === true) {
-    guaranteedCharacters.push(random(upperLetters));
     availableCharacters.push(upperLetters);
   }
 
   if (characterSpecial === true) {
-    guaranteedCharacters.push(random(specialCharacters));
     availableCharacters.push(specialCharacters);
   }
 
   if (characterNumber === true) {
-    guaranteedCharacters.push(random(digits));
     availableCharacters.push(digits);
   }
 
-  for (let i = guaranteedCharacters.length + 1; i < passwordLength; i++) {
-    guaranteedCharacters.push(random(availableCharacters));
+  let userConfig ={
+    lowerCase: false,
+    upperCase: false,
+    specialChars: false,
+    digits: false,
+    passwordLength: passwordLength
   }
-  // if (finalPassword.length != 0) {
-  //   final(finalPassword, passwordLength); //must make sure user selected at least one criteria
-  // } else {
-  //   alert("Please select enough criteria to generate a password.");
-  //   return createPassword();
-  // }
-  console.log(guaranteedCharacters);
-  return guaranteedCharacters.join("");
+
+  console.log(userConfig);
+  return userConfig
+  
+}
+  
+  //  if (finalPassword.length != 0) {
+  //    final(finalPassword, passwordLength); //must make sure user selected at least one criteria
+  //  } else {
+  //    alert("Please select enough criteria to generate a password.");
+  //    return createPassword();
+  //  }
+
+
+function randomIndex(totalLength){
+  return Math.floor(Math.random() * totalLength)
 }
 
-function random(characterString) {
-  let randomIndex = Math.floor(Math.random() * characterString.length);
-  return characterString[randomIndex];
+function random(availableCharacters) {
+  let randomIndex = Math.floor(Math.random() * availableCharacters.length);
+  return availableCharacters[randomIndex];
 }
 
 function final() {
