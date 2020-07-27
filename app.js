@@ -6,31 +6,56 @@ let password = {
     special: '!@#$%^&*()_-+={[}]?'
 };
 
-// Empty Password Array with pushed object arrays
-// let final = [].concat(password.upper, password.lower, password.number, password.special);
-
 // Empty password array
 let final = [];
 
 // User confirm for uppercase characters
 function passwordConfirmUpper() {
-    let upperCase = confirm("Would you like upper case?");
+    // User Confirm Upper Char
+    let upperCase = confirm("Would you like upper case characters?");
     
+    // If user chooses yes, push upper string to final array
     if (upperCase === true) {
-        final.push(password.upper);
+        function shuffle(s) {
+            final.push(password.upper);
         console.log("Upper Added! ");
+            //
+            final.sort(function() {
+                return 0.5 - Math.random();
+            });
+            // Convert Array to string
+            s = final.join('');
+            return s;
+        }
+    
+        let s = final;
+    
+        s = shuffle(s);
+    
+        console.log(s);
+        
+    
+    // If user chooses no, move on to next confirm
     } else {
         console.log("No Uppers! ")
     }
+
+    
 }
+
+
+
 
 // User confirm for lowercase characters
 function passwordConfirmLower() {
-    let lowerCase = confirm("Would you like lower case?");
+    let lowerCase = confirm("Would you like lower case characters?");
     
+    // If user chooses yes, push lower string to final array
     if (lowerCase === true) {
         final.push(password.lower);
         console.log("Lowers Added! ");
+
+    // If user chooses no, move on to next confirm
     } else {
         console.log("No Lowers! ")
     }
@@ -40,9 +65,12 @@ function passwordConfirmLower() {
 function passwordConfirmNumber() {
     let numbers = confirm("Would you like numbers?");
     
+    // If user chooses yes, push number string to final array
     if (numbers === true) {
         final.push(password.number);
         console.log("Numbers Added! ");
+
+    // If user chooses no, move on to next confirm
     } else {
         console.log("No Numbers! ")
     }
@@ -52,28 +80,29 @@ function passwordConfirmNumber() {
 function passwordConfirmSpecial() {
     let specialCharacters = confirm("Would you like special characters?");
     
+    // If user chooses yes, push special string to final array
     if (specialCharacters === true) {
         final.push(password.special);
         console.log("Specials Added! ");
+
+    // If user chooses no, move on to next confirm
     } else {
         console.log("No Specials! ")
     }
 }
 
-// Join indices to randomize. 
-function passwordJoin() {
-    
-    // Joining indices 
-    let finalPassword = final.join('');
-    console.log(finalPassword);
+// Shuffle final array to make it truly random
+// function shuffle(s) {
+//     //
+//     final.sort(function() {
+//         return 0.5 - Math.random();
+//     });
+//     // Convert Array to string
+//     s = final.join('');
+//     return s;
+// }
 
-    // Randomize the String (Returning the array randomized)
-    let random = final.sort(() => Math.random() - 0.5);
-    console.log(random);
-}
 
-
-    
 
 
 
@@ -85,7 +114,13 @@ passwordConfirmNumber();
 
 passwordConfirmSpecial();
 
-passwordJoin();
+// let s = final;
+// 
+// s = shuffle(s);
+// 
+// console.log(s);
+
+// shuffle();
 
 // console.log(final);
 
