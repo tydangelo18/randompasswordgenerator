@@ -14,46 +14,62 @@ function passwordConfirmUpper() {
     // User Confirm Upper Char
     let upperCase = confirm("Would you like upper case characters?");
     
-    // If user chooses yes, push upper string to final array
+    // If user chooses yes
     if (upperCase === true) {
-        function shuffle(s) {
-            final.push(password.upper);
-        console.log("Upper Added! ");
-            //
-            final.sort(function() {
+        function shuffleUp(u) {
+            // Split the array in order to shuffle it
+            let upperArray = u.split('');
+            console.log("Upper Added! ");
+            // Shuffle the Array
+            upperArray.sort(function() {
                 return 0.5 - Math.random();
             });
-            // Convert Array to string
-            s = final.join('');
-            return s;
+            // Convert shuffled array to string
+            u = upperArray.join('');
+            return u;
         }
     
-        let s = final;
-    
-        s = shuffle(s);
-    
-        console.log(s);
+        let u = password.upper;
         
-    
+        // Call shuffleUp function
+        u = shuffleUp(u);
+
+        // Push the shuffled string into final password array
+        final.push(u);
+        
     // If user chooses no, move on to next confirm
     } else {
         console.log("No Uppers! ")
     }
-
-    
 }
-
-
 
 
 // User confirm for lowercase characters
 function passwordConfirmLower() {
     let lowerCase = confirm("Would you like lower case characters?");
     
-    // If user chooses yes, push lower string to final array
+    // If user chooses yes
     if (lowerCase === true) {
-        final.push(password.lower);
+        function shuffleLow(l) {
+        // Split the array in order to shuffle it
+        let lowerArray = l.split('');
         console.log("Lowers Added! ");
+        // Shuffle the array
+        lowerArray.sort(function() {
+            return 0.5 - Math.random();
+        });
+        // Convert Array to string
+        l = lowerArray.join('');
+        return l;
+    }
+
+    let l = password.lower;
+
+    // Call shuffleLow function
+    l = shuffleLow(l);
+
+    // Push the shuffled String into the final password array
+    final.push(l);
 
     // If user chooses no, move on to next confirm
     } else {
@@ -65,10 +81,28 @@ function passwordConfirmLower() {
 function passwordConfirmNumber() {
     let numbers = confirm("Would you like numbers?");
     
-    // If user chooses yes, push number string to final array
+    // If user chooses yes
     if (numbers === true) {
-        final.push(password.number);
+        function shuffleNum(n) {
+        // Split the array in order to shuffle it
+        let numArray = n.split('');
         console.log("Numbers Added! ");
+        // Shuffle the array
+        numArray.sort(function() {
+            return 0.5 - Math.random();
+        });
+        // Convert Array to string
+        n = numArray.join('');
+        return n;
+    }
+
+    let n = password.number;
+
+    // Call ShuffleNum Function
+    n = shuffleNum(n);
+
+    // Push the shuffled String into the final password array
+    final.push(n);
 
     // If user chooses no, move on to next confirm
     } else {
@@ -80,10 +114,28 @@ function passwordConfirmNumber() {
 function passwordConfirmSpecial() {
     let specialCharacters = confirm("Would you like special characters?");
     
-    // If user chooses yes, push special string to final array
+    // If user chooses yes
     if (specialCharacters === true) {
-        final.push(password.special);
+        function shuffleSpec(s) {
+        // Split the array in order to shuffle it
+        let specArray = s.split('');
         console.log("Specials Added! ");
+        // Shuffle the array
+        specArray.sort(function() {
+            return 0.5 - Math.random();
+        });
+
+        s = specArray.join('');
+        return s;
+    }
+
+    let s = password.special;
+
+    // Call shuffleSpec function
+    s = shuffleSpec(s);
+
+    // Push the shuffled string into final array
+    final.push(s);
 
     // If user chooses no, move on to next confirm
     } else {
@@ -91,21 +143,24 @@ function passwordConfirmSpecial() {
     }
 }
 
-// Shuffle final array to make it truly random
-// function shuffle(s) {
-//     //
-//     final.sort(function() {
-//         return 0.5 - Math.random();
-//     });
-//     // Convert Array to string
-//     s = final.join('');
-//     return s;
-// }
+/**
+ * TODO: Combine all strings in the final array into one string
+ * * let joinArr = final.join('');
+ * TODO: Shuffle the string
+ * * Create a function
+ *  ! .split('');
+ *  ! .sort(Math.random);
+ *  ! .join('');
+ *  ! push(x);
+ *      ? Follow the previous 4 inner functions
+ * TODO: limit the string to the number that the user chooses
+ * * for loop?
+ * TODO: display the string (password) in the HTML (DOM)
+ * * DOM Manipulation
+ */
 
 
-
-
-
+// Function calls
 passwordConfirmUpper();
 
 passwordConfirmLower();
@@ -114,15 +169,8 @@ passwordConfirmNumber();
 
 passwordConfirmSpecial();
 
-// let s = final;
-// 
-// s = shuffle(s);
-// 
-// console.log(s);
+console.log(final);
 
-// shuffle();
-
-// console.log(final);
 
 
 
