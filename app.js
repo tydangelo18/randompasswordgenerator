@@ -143,16 +143,30 @@ function passwordConfirmSpecial() {
     }
 }
 
+// Combine all user selected criteria into one string
+function joinArray() {
+    for (i = 0; i < final.length; i++); {
+        // Iterate through final array and join each index,
+        // then split into individual strings
+        let joinFinal = final.join('').split('');
+        // Randomize each individual string order within the array
+        joinFinal.sort(function() {
+            return 0.5 - Math.random();
+        });
+        // Join the individual strings into one string within the array
+        let f = joinFinal.join('');
+        console.log(f);
+    }
+
+}
+
+// Character Count Loop
+
+
+
+
+
 /**
- * TODO: Combine all strings in the final array into one string
- * * let joinArr = final.join('');
- * TODO: Shuffle the string
- * * Create a function
- *  ! .split('');
- *  ! .sort(Math.random);
- *  ! .join('');
- *  ! push(x);
- *      ? Follow the previous 4 inner functions
  * TODO: limit the string to the number that the user chooses
  * * for loop?
  * TODO: display the string (password) in the HTML (DOM)
@@ -170,6 +184,11 @@ passwordConfirmNumber();
 passwordConfirmSpecial();
 
 console.log(final);
+
+joinArray();
+
+
+
 
 
 
