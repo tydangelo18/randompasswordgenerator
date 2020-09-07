@@ -10,18 +10,6 @@ let password = {
 let final = [];
 
 
-
-// User is prompted to choose a password character length
-function passwordcharCount () {
-    // User Prompt
-    let charCount = prompt("How many characters would you like your password to be? (Min: 8, Max: 81)");
-    console.log(charCount);
-    // If user chooses less than 8 or more than 128 characters, page reloads. 
-    if (charCount < 8 || charCount > 81) {
-        location.reload();
-    }
-}
-
 // User confirm for uppercase characters
 function passwordConfirmUpper() {
     // User Confirm Upper Char
@@ -157,7 +145,7 @@ function passwordConfirmSpecial() {
 }
 
 // Combine all user selected criteria into one string
-function joinArray(passwordcharCount) {
+function joinArray() {
     for (i = 0; i < final.length; i++); {
         // Iterate through final array and join each index,
         // then split into individual strings
@@ -167,12 +155,31 @@ function joinArray(passwordcharCount) {
             return 0.5 - Math.random();
         });
         // Join the individual strings into one string within the array
-        let f = joinFinal.join('');
-        console.log(f);
+        // let f = joinFinal.join('');
+        // console.log(f);
+        console.log(joinFinal);
+        passwordcharCount(joinFinal);
     }
+    
 }
 
-
+// Password Character Count
+// User is prompted to choose a password character length
+function passwordcharCount (joinFinal) {
+    // User Prompt
+    let charCount = prompt("How many characters would you like your password to be? (Min: 8, Max: 81)");
+    console.log(charCount);
+    // If user chooses less than 8 or more than 81 characters, page reloads. 
+    if (charCount < 8 || charCount > 81) {
+        location.reload();
+        // If user chooses between 8 and 81 characters: loop through the array and convert to string
+    } else {
+        for (i = 0; i < charCount; i++) {
+            let p = joinFinal.join('');
+            console.log(p);
+        }
+    }
+}
 
 
 
@@ -185,6 +192,8 @@ function joinArray(passwordcharCount) {
 
 
 // Function calls
+
+
 passwordConfirmUpper();
 
 passwordConfirmLower();
@@ -193,13 +202,12 @@ passwordConfirmNumber();
 
 passwordConfirmSpecial();
 
-passwordcharCount();
-
 // console.log(final);
 
 joinArray();
 
-console.log(c);
+
+
 
 
 
