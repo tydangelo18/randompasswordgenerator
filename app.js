@@ -9,7 +9,6 @@ let password = {
 // Empty password array
 let final = [];
 
-
 // User confirm for uppercase characters
 function passwordConfirmUpper() {
     // User Confirm Upper Char
@@ -174,26 +173,22 @@ function passwordcharCount (joinFinal) {
         location.reload();
         // If user chooses between 8 and 81 characters: loop through the array and convert to string
     } else {
+        // Let p be an empty string
+        let p = "";
         for (i = 0; i < charCount; i++) {
-            let p = joinFinal.join('');
-            console.log(p);
-        }
+            /* Each time the loop runs (will loop a number of times that the user types in); 
+            // use Math.random to generate a random integer that selects a random character 
+            from the joinFinal array
+            and applies it to the empty p string
+            */
+             p += joinFinal[Math.floor(Math.random() * charCount)];
+            }
+        console.log(p);
     }
 }
 
 
-
-/**
- * TODO: limit the string to the number that the user chooses
- * * for loop?
- * TODO: display the string (password) in the HTML (DOM)
- * * DOM Manipulation
- */
-
-
 // Function calls
-
-
 passwordConfirmUpper();
 
 passwordConfirmLower();
@@ -201,8 +196,6 @@ passwordConfirmLower();
 passwordConfirmNumber();
 
 passwordConfirmSpecial();
-
-// console.log(final);
 
 joinArray();
 
