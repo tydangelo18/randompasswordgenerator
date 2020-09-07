@@ -9,6 +9,19 @@ let password = {
 // Empty password array
 let final = [];
 
+// User is prompted to choose a password character length
+function passwordcharCount () {
+    // User Prompt
+    let charCount = prompt("How many characters would you like your password to be? (Min: 8, Max: 81)");
+
+    // If user chooses less than 8 or more than 128 characters
+    if (charCount < 8 || charCount > 81) {
+        alert("Please choose between 8 and 81 characters")
+    } else {
+
+    }
+}
+
 // User confirm for uppercase characters
 function passwordConfirmUpper() {
     // User Confirm Upper Char
@@ -161,10 +174,7 @@ function joinArray() {
 }
 
 // Character Count Loop
-
-
-
-
+/** Limit the f string to the amount of characters the user chose in the first prompt */
 
 /**
  * TODO: limit the string to the number that the user chooses
@@ -175,6 +185,8 @@ function joinArray() {
 
 
 // Function calls
+passwordcharCount();
+
 passwordConfirmUpper();
 
 passwordConfirmLower();
@@ -183,7 +195,7 @@ passwordConfirmNumber();
 
 passwordConfirmSpecial();
 
-console.log(final);
+// console.log(final);
 
 joinArray();
 
