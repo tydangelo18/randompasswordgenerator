@@ -183,6 +183,7 @@ function passwordcharCount (joinFinal) {
             */
              p += joinFinal[Math.floor(Math.random() * charCount)];
             }
+            document.getElementById("demo").textContent = p;
         console.log(p);
     }
 }
@@ -198,6 +199,8 @@ passwordConfirmNumber();
 passwordConfirmSpecial();
 
 joinArray();
+
+
 
 
 
