@@ -1,8 +1,61 @@
-#passwordDiv {
-    position: fixed;
+html, body {
     width: 100%;
-    font-size: 50px;
+    height: 100%;
+}
+
+#header {
+    background-color: #EAAC8B;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+#headerTitle {
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 1em 2em;
+}
+
+#genDiv {
+    height: 92%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+#outerDiv {
+    border: 2px solid #000000;
+    border-radius: 1em;
+    width: 600px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B56576;
+}
+
+#promptDiv {
+    border: 1px solid #000000;
+    border-radius: 1em;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #cbc9c9;
+
+}
+
+#passwordDiv {
+    border: .5px dotted #888888;
+    border-radius: 1em;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
